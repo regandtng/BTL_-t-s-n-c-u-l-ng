@@ -62,6 +62,11 @@ class BookingController extends Controller
     // POST /booking/store
     public function store()
     {
+        if (!Session::get('user_id')) {
+            Session::flash('error', 'Vui lòng đăng nhập để đặt sân.');
+            $this->redirect('/login');
+        }
+
         $courtId    = $_POST['court_id'] ?? null;
         $date       = $_POST['booking_date'] ?? null;
         $startHour  = (int)($_POST['start_hour'] ?? 0);
@@ -102,6 +107,11 @@ class BookingController extends Controller
     // GET /booking/confirm
     public function confirm()
     {
+        if (!Session::get('user_id')) {
+            Session::flash('error', 'Vui lòng đăng nhập để đặt sân.');
+            $this->redirect('/login');
+        }
+
         $pending = Session::get('pending_booking');
         if (!$pending) {
             $this->redirect('/branches');
@@ -124,6 +134,11 @@ class BookingController extends Controller
     // POST /booking/confirm
     public function processConfirm()
     {
+        if (!Session::get('user_id')) {
+            Session::flash('error', 'Vui lòng đăng nhập để đặt sân.');
+            $this->redirect('/login');
+        }
+
         $pending = Session::get('pending_booking');
         if (!$pending) {
             $this->redirect('/branches');
