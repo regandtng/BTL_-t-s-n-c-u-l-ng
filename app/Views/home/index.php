@@ -1,11 +1,10 @@
 <?php ob_start(); ?>
 
-<!-- Hero Section -->
 <div class="hero-section">
     <div class="container hero-inner py-6">
         <div class="row align-items-center">
             <div class="col-md-7">
-                <span class="hero-eyebrow mb-3">🏸 Nền tảng đặt sân cầu lông hàng đầu Việt Nam</span>
+                <span class="hero-eyebrow mb-3"> Nền tảng đặt sân cầu lông hàng đầu </span>
                 <h1 class="hero-title mb-3">
                     Đặt Sân Cầu Lông <span>Trực Tuyến</span><br>Nhanh Chóng & Tiện Lợi
                 </h1>

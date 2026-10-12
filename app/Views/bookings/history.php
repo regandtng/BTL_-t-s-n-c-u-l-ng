@@ -1,5 +1,6 @@
 <?php ob_start(); ?>
 
+
 <div class="page-wrap">
     <div class="container">
         <div class="page-header">
@@ -20,7 +21,7 @@
         <div class="card p-4">
             <?php if(empty($bookings)): ?>
                 <div class="text-center py-5">
-                    <div style="font-size:3rem; opacity:0.5;">📋</div>
+                    <div style="font-size:3rem; opacity:0.5;"></div>
                     <p class="text-muted mb-0">Không tìm thấy lịch sử đặt sân nào.</p>
                 </div>
             <?php else: ?>
@@ -69,3 +70,15 @@
     </div>
 </div>
 <?php $content = ob_get_clean(); require __DIR__ . '/../layouts/main.php'; ?>
+<style>
+    .page-wrap .card,
+    .page-wrap .card-hover,
+    .page-wrap .glass-card,
+    .page-wrap .card:hover,
+    .page-wrap .card-hover:hover {
+        transform: none !important;
+        box-shadow: none !important;
+        border-color: #dfe7f0 !important;
+        transition: none !important;
+    }
+</style>
